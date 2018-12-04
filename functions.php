@@ -184,7 +184,7 @@ function insertWebmap($name, $x, $y, $map) {
     echo "var webmap = L.map('webmap', { crs: L.CRS.Simple });\n";
     echo "webmap.fitBounds(bounds);\n";
     echo "webmap.attributionControl.setPrefix('');\n";
-    echo "webmap.options.minZoom = -2;\n";
+    echo "webmap.options.minZoom = -4;\n";
     echo "webmap.options.maxZoom = 4;\n";
     echo "var image = L.imageOverlay('" . $map . "', bounds).addTo(webmap);\n";
     echo "var marker = L.marker([" . $y . ", " . $x . "]).addTo(webmap);\n";
@@ -204,7 +204,7 @@ function insertWebmapTop($map) {
     echo "var webmap = L.map('webmap', { crs: L.CRS.Simple });\n";
     echo "webmap.fitBounds(bounds);\n";
     echo "webmap.attributionControl.setPrefix('');\n";
-    echo "webmap.options.minZoom = -2;\n";
+    echo "webmap.options.minZoom = -4;\n";
     echo "webmap.options.maxZoom = 4;\n";
     echo "var image = L.imageOverlay('" . $map . "', bounds).addTo(webmap);\n";
 }
