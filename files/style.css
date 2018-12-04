@@ -1,0 +1,62 @@
+/* Items put here are extras from the CDN CSS (Materialize) */
+/* PARALLAX */
+@keyframes animateBackground {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: -960px 0;
+    }
+}
+.layer1,
+.layer2,
+.layer3 {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-repeat: repeat;
+    z-index: -1;
+}
+
+.layer1 {
+    background-image: url("./layer1.png");
+    animation: animateBackground 80s linear infinite;
+}
+
+.layer2 {
+    background-image: url("./layer2.png");
+    animation: animateBackground 40s linear infinite;
+}
+
+.layer3 {
+    background-image: url("./layer3.png");
+    animation: animateBackground 20s linear infinite;
+}
+/* Colors */
+.ss13-blue {
+  background-color: #40628a !important;
+}
+.ss13-blue-text {
+  color: #40628a !important;
+}
+.ss13-ui-grey {
+  background-color: #272727 !important;
+}
+.ss13-ui-grey-text {
+  color: #272727 !important;
+}
+/* Helper Styles */
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+.small-text {
+    font-size: 10px;
+}
+#webmap {
+    height: 200px;
+    float: right;
+}

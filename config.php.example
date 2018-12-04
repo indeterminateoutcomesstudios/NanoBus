@@ -1,0 +1,7 @@
+<?php
+// This file has database connection settings, modify as you need. Rename to config.php when done
+$servername = "localhost"; // Hostname of the database server (default localhost)
+$username = "root"; // Database username (default root)
+$password = ""; // Database password (default blank)
+$dbname = "feedback"; // Database name (default feedback)
+?>
