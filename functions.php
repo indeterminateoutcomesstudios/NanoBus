@@ -179,16 +179,16 @@ function insertWebmap($name, $x, $y, $map) {
     echo "<div id=\"webmap\"></div>";
     echo "<script src=\"https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.4/leaflet.js\"></script>";
     echo "<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.4/leaflet.css\">";
-	echo "<script>\n";
-	echo "	var bounds = [[0, 0], [8160, 8160]];\n";
-	echo "	var webmap = L.map('webmap', { crs: L.CRS.Simple });\n";
-    echo "	webmap.fitBounds(bounds);\n";
-    echo "  webmap.attributionControl.setPrefix('');\n";
-	echo "	webmap.options.minZoom = -2;\n";
-    echo "	webmap.options.maxZoom = 4;\n";
-    echo "	var image = L.imageOverlay('" . $map . "', bounds).addTo(webmap);\n";
-    echo "  var marker = L.marker([" . $y . ", " . $x . "]).addTo(webmap);\n";
-    echo "  marker.bindPopup('" . $name . "').openPopup();\n";
+    echo "<script>\n";
+    echo "var bounds = [[0, 0], [8160, 8160]];\n";
+    echo "var webmap = L.map('webmap', { crs: L.CRS.Simple });\n";
+    echo "webmap.fitBounds(bounds);\n";
+    echo "webmap.attributionControl.setPrefix('');\n";
+    echo "webmap.options.minZoom = -2;\n";
+    echo "webmap.options.maxZoom = 4;\n";
+    echo "var image = L.imageOverlay('" . $map . "', bounds).addTo(webmap);\n";
+    echo "var marker = L.marker([" . $y . ", " . $x . "]).addTo(webmap);\n";
+    echo "marker.bindPopup('" . $name . "').openPopup();\n";
     echo "</script>";
 }
 // Inserts a top of a webmap (For round info)
@@ -199,14 +199,14 @@ function insertWebmapTop($map) {
     echo "<div id=\"webmap\"></div>";
     echo "<script src=\"https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.4/leaflet.js\"></script>";
     echo "<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.4/leaflet.css\">";
-	echo "<script>\n";
-	echo "	var bounds = [[0, 0], [8160, 8160]];\n";
-	echo "	var webmap = L.map('webmap', { crs: L.CRS.Simple });\n";
-    echo "	webmap.fitBounds(bounds);\n";
-    echo "  webmap.attributionControl.setPrefix('');\n";
-	echo "	webmap.options.minZoom = -2;\n";
-    echo "	webmap.options.maxZoom = 4;\n";
-    echo "	var image = L.imageOverlay('" . $map . "', bounds).addTo(webmap);\n";
+    echo "<script>\n";
+    echo "var bounds = [[0, 0], [8160, 8160]];\n";
+    echo "var webmap = L.map('webmap', { crs: L.CRS.Simple });\n";
+    echo "webmap.fitBounds(bounds);\n";
+    echo "webmap.attributionControl.setPrefix('');\n";
+    echo "webmap.options.minZoom = -2;\n";
+    echo "webmap.options.maxZoom = 4;\n";
+    echo "var image = L.imageOverlay('" . $map . "', bounds).addTo(webmap);\n";
 }
 // Inserts one marker onto a webmap (For round info)
 function insertWebmapMarker($x, $y, $name) {
