@@ -70,7 +70,7 @@
         }
     }
 ?>
-<a href="deaths.php?p=1" class="btn btn-outline-light btn-lg ss13-blue"><i class="fas fa-arrow-circle-left"></i> Return</a>
+<a href="rounds.php?p=1" class="btn btn-outline-light btn-lg ss13-blue"><i class="fas fa-arrow-circle-left"></i> Return</a>
 </div>
 </div>
 <?php
