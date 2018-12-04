@@ -24,10 +24,15 @@
         echo "<p class=\"text-light\">Please double check your entry and try again.</p>";
     } else {
         foreach($result as $row) {
-            echo "<h1 class=\"text-light\">Book Title: " . $row['title'] . "</h1>";
-            echo "<p class=\"text-light\"><i>Written by " . $row['author'] . "</i></p>";
-            echo "<p class=\"text-light\"><i>Category: " . $row['category'] . "</i></p>";
+            echo "<div class=\"row\">";
+            echo "<div class=\"col-sm\">";
+            echo "<h1 class=\"text-light\">" . $row['title'] . "</h1>";
+            echo "<p class=\"text-light\"><i>Written by " . $row['author'] . " | Category: " . $row['category'] . "</i></p>";
+            echo "</div>";
+            echo "<div class=\"col-sm\">";
             echo "<div class=\"jumbotron\">" . $row['content'] . "</div>";
+            echo "</div>";
+            echo "</div>";
         }
     }
 ?>

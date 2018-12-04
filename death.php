@@ -24,13 +24,31 @@
         echo "<p class=\"text-light\">Please double check your entry and try again.</p>";
     } else {
         foreach($result as $row) {
-            $row['pod'] = substr($row['pod'], 2); // Removes the wierd lettering at the start of the area
+            echo "<div class=\"row\">";
+            echo "<div class=\"col-sm\">";
             echo "<h1 class=\"text-light\">Death ID: " . $row['id'] . "</h1>";
-            echo "<p class=\"text-light\"><i>" . $row['name'] . " died at " . $row['tod'] . " in the " . $row['pod'] . "</i>";
+            echo "<p class=\"text-light\"><i>" . $row['name'] . " died at " . $row['tod'] . " in " . $row['pod'] . "</i><br>";
             echo " <span class=\"badge badge-danger\">Brute: " . $row['bruteloss'] . "</span> ";
             echo " <span class=\"badge badge-warning\">Burn: " . $row['fireloss'] . "</span> ";
             echo " <span class=\"badge badge-primary\">Suffocation: " . $row['oxyloss'] . "</span> ";
             echo " <span class=\"badge badge-success\">Toxin: " . $row['brainloss'] . "</span></p>";
+            echo "</div>";
+            echo "<div class=\"col-sm\">";
+            $xyz = explode(', ', $row['coord']);
+            $map = $row['map']; // Needed so I can use it inside the IF statement
+            $x = $xyz[0]; // Needed so I can use it inside the IF statement
+            $y = $xyz[1]; // Needed so I can use it inside the IF statement
+            $z = $xyz[2]; // Needed so I can use it inside the IF statement
+            if($map != "NSS Cyberiad" || $xyz[2] != 1) {
+                echo "<div class=\"jumbotron\">";
+                echo "<h1>Error</h1>";
+                echo "<p>This death does not have a position due to either being off station, or not on the Cyberiad map.</p>";
+                echo "</div>";
+            } else {
+                echo insertWebmap($row['name'], $x, $y, $row['map']);
+            }
+            echo "</div>";
+            echo "</div>";
         }
     }
 ?>
