@@ -1,5 +1,64 @@
 <?php
 // This file is for various functions that would take up too much space in other pages
+// Render page head contents
+function renderHead() {
+    echo "<head>";
+    echo "<script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js\" integrity=\"sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy\" crossorigin=\"anonymous\"></script>";
+    echo "<script src=\"https://code.jquery.com/jquery-3.3.1.slim.min.js\" integrity=\"sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo\" crossorigin=\"anonymous\"></script>";
+    echo "<script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js\" integrity=\"sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49\" crossorigin=\"anonymous\"></script>";
+    echo "<link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css\" integrity=\"sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO\" crossorigin=\"anonymous\">";
+    echo "<link rel=\"stylesheet\" href=\"https://use.fontawesome.com/releases/v5.5.0/css/all.css\">";;
+    echo "<link rel=\"stylesheet\" href=\"files/style.css\">";
+    echo "<title>NanoBus</title>";
+    echo "</head>";
+    echo "<body>";
+    echo "<div class=\"layer1\"></div>";
+    echo "<div class=\"layer2\"></div>";
+    echo "<div class=\"layer3\"></div>";
+}
+// Render navbar with selected tab 
+function renderNav($page) {
+    echo "<nav class=\"navbar navbar-expand-md navbar-dark navbar-fixed-top ss13-ui-grey\">";
+    echo "<div class=\"container\">";
+    echo "<b><a class=\"navbar-brand\" href=\"index.php\">NanoBus</a></b>";
+    echo "<div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">";
+    echo "<ul class=\"navbar-nav mr-auto\">";
+    if($page == "home") {echo "<li class=\"nav-item active\">";} else {echo "<li class=\"nav-item\">";}
+    echo "<a class=\"nav-link\" href=\"index.php\"><i class=\"fas fa-home\"></i> Home</a>";
+    echo "</li>";
+    if($page == "staff") {echo "<li class=\"nav-item active\">";} else {echo "<li class=\"nav-item\">";}
+    echo "<a class=\"nav-link\" href=\"staff.php\"><i class=\"fas fa-hammer\"></i> Staff</a>";
+    echo "</li>";
+    if($page == "deaths") {echo "<li class=\"nav-item active\">";} else {echo "<li class=\"nav-item\">";}
+    echo "<a class=\"nav-link\" href=\"deaths.php?p=1\"><i class=\"fas fa-skull-crossbones\"></i> Deaths</a>";
+    echo "</li>";
+    if($page == "books") {echo "<li class=\"nav-item active\">";} else {echo "<li class=\"nav-item\">";}
+    echo "<a class=\"nav-link\" href=\"books.php?p=1\"><i class=\"fas fa-book\"></i> Books</a>";
+    echo "</li>";
+    if($page == "patrons") {echo "<li class=\"nav-item active\">";} else {echo "<li class=\"nav-item\">";}
+    echo "<a class=\"nav-link\" href=\"patrons.php\"><i class=\"fas fa-users\"></i> Patrons</a>";
+    echo "</li>";
+    if($page == "rounds") {echo "<li class=\"nav-item active\">";} else {echo "<li class=\"nav-item\">";}
+    echo "<a class=\"nav-link\" href=\"rounds.php?p=1\"><i class=\"fas fa-arrow-circle-right\"></i> Rounds</a>";
+    echo "</li>";
+    echo "</ul>";
+    echo "</div>";
+    echo "</div>";
+    echo "</nav><br><br>";
+}
+// Render footer with time
+function renderFooter($starttime) {
+    echo "<footer class=\"footer ss13-ui-grey\">";
+    echo "<div class=\"container\">";
+    echo "<br>";
+    $endtime = microtime(true);
+    $loadtime = $endtime - $starttime;
+    $rounded = round($loadtime, 3);
+    echo "<small><p class=\"text-light align-middle\">NanoBus © AffectedArc07 2018. All Rights Reserved - <a href=\"https://github.com/AffectedArc07/NanoBus\">GitHub</a> - <a href=\"https://github.com/AffectedArc07/NanoBus/issues/new\">Report Issue</a> - This page took ". $rounded . " seconds to load.</p></small>";
+    echo "</div>";
+    echo "</footer>";
+    echo "</body>";
+}
 // Convert bit flags to admin permissions (For admins page)
 function bitflagsToPermissions($bitflag) {
     $permissions = array();
