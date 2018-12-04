@@ -214,7 +214,7 @@ function insertWebmapMarker($x, $y, $name) {
     $x = (32 * $x) - 16;
     $y = (32 * $y) - 16;
     echo "  var marker_" . $id . " = L.marker([" . $y . ", " . $x . "]).addTo(webmap);\n";
-    echo "  marker_" . $id . ".bindPopup('" . $name . "').openPopup();\n";
+    echo "  marker_" . $id . ".bindPopup('" . $name . "');\n";
 }
 // Inserts top half of webmap (For round info)
 function insertWebmapBase() {
