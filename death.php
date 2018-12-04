@@ -34,6 +34,7 @@
             echo " <span class=\"badge badge-success\">Toxin: " . $row['brainloss'] . "</span></p>";
             echo "</div>";
             echo "<div class=\"col-sm\">";
+            echo "<h1 class=\"text-light\">Death Map</h1>";
             $xyz = explode(', ', $row['coord']);
             $map = $row['map']; // Needed so I can use it inside the IF statement
             $x = $xyz[0]; // Needed so I can use it inside the IF statement
@@ -52,7 +53,7 @@
         }
     }
 ?>
-<a href="deaths.php?p=1" class="btn btn-outline-light btn-lg ss13-blue"><i class="fas fa-arrow-circle-left"></i> Return</a>
+<a href="rounds.php?p=1" class="btn btn-outline-light btn-lg ss13-blue"><i class="fas fa-arrow-circle-left"></i> Return</a>
 </div>
 </div>
 <?php

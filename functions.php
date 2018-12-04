@@ -186,9 +186,38 @@ function insertWebmap($name, $x, $y, $map) {
     echo "  webmap.attributionControl.setPrefix('');\n";
 	echo "	webmap.options.minZoom = -2;\n";
     echo "	webmap.options.maxZoom = 4;\n";
-    echo "  var marker = L.marker([" . $y . ", " . $x . "]).addTo(webmap);\n";
     echo "	var image = L.imageOverlay('" . $map . "', bounds).addTo(webmap);\n";
+    echo "  var marker = L.marker([" . $y . ", " . $x . "]).addTo(webmap);\n";
     echo "  marker.bindPopup('" . $name . "').openPopup();\n";
     echo "</script>";
+}
+// Inserts a top of a webmap (For round info)
+function insertWebmapTop($map) {
+    if($map = "NSS Cyberiad") {
+        $map = "https://affectedarc07.github.io/SS13WebMap/Paradise/Cyberiad/cyberiad-1.png";
+    }
+    echo "<div id=\"webmap\"></div>";
+    echo "<script src=\"https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.4/leaflet.js\"></script>";
+    echo "<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.4/leaflet.css\">";
+	echo "<script>\n";
+	echo "	var bounds = [[0, 0], [8160, 8160]];\n";
+	echo "	var webmap = L.map('webmap', { crs: L.CRS.Simple });\n";
+    echo "	webmap.fitBounds(bounds);\n";
+    echo "  webmap.attributionControl.setPrefix('');\n";
+	echo "	webmap.options.minZoom = -2;\n";
+    echo "	webmap.options.maxZoom = 4;\n";
+    echo "	var image = L.imageOverlay('" . $map . "', bounds).addTo(webmap);\n";
+}
+// Inserts one marker onto a webmap (For round info)
+function insertWebmapMarker($x, $y, $name) {
+    $id = rand(1,1000); // High value used so we have a low chance of missing a marker
+    $x = (32 * $x) - 16;
+    $y = (32 * $y) - 16;
+    echo "  var marker_" . $id . " = L.marker([" . $y . ", " . $x . "]).addTo(webmap);\n";
+    echo "  marker_" . $id . ".bindPopup('" . $name . "').openPopup();\n";
+}
+// Inserts top half of webmap (For round info)
+function insertWebmapBase() {
+    echo "</script>"; // Arguably this doesnt need a function but it pleases my OCD
 }
 ?>

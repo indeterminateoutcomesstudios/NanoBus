@@ -6,7 +6,7 @@
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $page = $_GET['p'];
     if(!$page) {
-        header("Location: deaths.php?p=1"); // Makes sure we have a page selected
+        header("Location: books.php?p=1"); // Makes sure we have a page selected
     }
     renderHead();
     renderNav("books");
