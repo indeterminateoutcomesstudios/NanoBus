@@ -24,6 +24,7 @@
         echo "<p class=\"text-light\">Please double check your entry and try again.</p>";
     } else {
         foreach($result as $row) {
+            $row['pod'] = preg_replace('/[^a-zA-Z0-9 ]/', '', $row['pod']);
             echo "<div class=\"row\">";
             echo "<div class=\"col-sm\">";
             echo "<h1 class=\"text-light\">Death ID: " . $row['id'] . "</h1>";

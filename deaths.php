@@ -66,9 +66,7 @@
     $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
     $result = $stmt->fetchAll(); 
     foreach($result as $row) {
-        if($row['pod'][1] =! "�") {
-            $row['pod'] = substr($row['pod'], 2); // Removes the wierd lettering at the start of the area
-        }
+        $row['pod'] = preg_replace('/[^a-zA-Z0-9 ]/', '', $row['pod']);
         if(!$row['species']) { // If no species is set
             $row['species'] = "Undefined"; // Set it to undefined
         }
