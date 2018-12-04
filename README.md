@@ -2,7 +2,7 @@
 Basically Statbus be redesigned to be compatible for ParadiseSS13.
 
 # SETUP
-0) **ENSURE YOU ARE USING A VERSION OF PARACODE LATER THAN [COMMIT HASH HERE]**
+0) **ENSURE YOU ARE USING A VERSION OF PARACODE LATER THAN [COMMIT HASH HERE] WITH DB VERSION 5**
 1) Rename `config.php.examlple` to `config.php`
 2) Create a **READ ONLY** user for your database
 *This web interface does not do any modifications, but better safe than sorry*
