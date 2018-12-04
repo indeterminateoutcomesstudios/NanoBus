@@ -26,20 +26,20 @@ function renderNav($page) {
     if($page == "home") {echo "<li class=\"nav-item active\">";} else {echo "<li class=\"nav-item\">";}
     echo "<a class=\"nav-link\" href=\"index.php\"><i class=\"fas fa-home\"></i> Home</a>";
     echo "</li>";
-    if($page == "staff") {echo "<li class=\"nav-item active\">";} else {echo "<li class=\"nav-item\">";}
-    echo "<a class=\"nav-link\" href=\"staff.php\"><i class=\"fas fa-hammer\"></i> Staff</a>";
+    if($page == "books") {echo "<li class=\"nav-item active\">";} else {echo "<li class=\"nav-item\">";}
+    echo "<a class=\"nav-link\" href=\"books.php?p=1\"><i class=\"fas fa-book\"></i> Books</a>";
     echo "</li>";
     if($page == "deaths") {echo "<li class=\"nav-item active\">";} else {echo "<li class=\"nav-item\">";}
     echo "<a class=\"nav-link\" href=\"deaths.php?p=1\"><i class=\"fas fa-skull-crossbones\"></i> Deaths</a>";
-    echo "</li>";
-    if($page == "books") {echo "<li class=\"nav-item active\">";} else {echo "<li class=\"nav-item\">";}
-    echo "<a class=\"nav-link\" href=\"books.php?p=1\"><i class=\"fas fa-book\"></i> Books</a>";
     echo "</li>";
     if($page == "patrons") {echo "<li class=\"nav-item active\">";} else {echo "<li class=\"nav-item\">";}
     echo "<a class=\"nav-link\" href=\"patrons.php\"><i class=\"fas fa-users\"></i> Patrons</a>";
     echo "</li>";
     if($page == "rounds") {echo "<li class=\"nav-item active\">";} else {echo "<li class=\"nav-item\">";}
     echo "<a class=\"nav-link\" href=\"rounds.php?p=1\"><i class=\"fas fa-arrow-circle-right\"></i> Rounds</a>";
+    echo "</li>";
+    if($page == "staff") {echo "<li class=\"nav-item active\">";} else {echo "<li class=\"nav-item\">";}
+    echo "<a class=\"nav-link\" href=\"staff.php\"><i class=\"fas fa-hammer\"></i> Staff</a>";
     echo "</li>";
     echo "</ul>";
     echo "</div>";
