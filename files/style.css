@@ -64,3 +64,8 @@
     border-width: 2px;
     border-color: white;
 }
+/* Makes images appear with pixel scaling (Nearest Neighbour) */
+img {
+  border-style: none;
+  image-rendering: pixelated;
+}
