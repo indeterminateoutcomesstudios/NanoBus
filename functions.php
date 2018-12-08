@@ -9,6 +9,8 @@ function renderHead() {
     echo "<link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css\" integrity=\"sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO\" crossorigin=\"anonymous\">";
     echo "<link rel=\"stylesheet\" href=\"https://use.fontawesome.com/releases/v5.5.0/css/all.css\">";;
     echo "<link rel=\"stylesheet\" href=\"files/style.css\">";
+    echo "<meta charset=\"utf-8\">";
+    echo "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">";
     echo "<title>NanoBus</title>";
     echo "</head>";
     echo "<body>";
