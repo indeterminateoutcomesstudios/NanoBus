@@ -35,7 +35,6 @@
       <th scope="col">Title</th>
       <th scope="col">Author</th>
       <th scope="col">Category</th>
-      <th scope="col">Read</th>
     </tr>
   </thead>
   <tbody>
@@ -50,11 +49,10 @@
     $result = $stmt->fetchAll(); 
     foreach($result as $row) {
         echo categoryToTR($row['category']);
-        echo "<th scope=\"row\">" . $row['id'] . "</td>";
+        echo "<th scope=\"row\"><a href=\"./book.php?id=" . $row['id'] . "\"><i class=\"fas fa-edit\"></i> " . $row['id'] . "</td>";
         echo "<td>" . $row['title'] . "</td>";
         echo "<td>" . $row['author'] . "</td>";
         echo "<td>" . categoryToIcon($row['category']) . $row['category'] . "</td>";
-        echo "<td><a href=\"./book.php?id=" . $row['id'] . "\">Read Book</td>";
         echo "</tr>";
     }
 ?>

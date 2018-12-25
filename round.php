@@ -27,10 +27,11 @@
             $data = endToData($row['game_mode_result']);
             echo "<div class=\"row\">";
             echo "<div class=\"col-sm\">";
-            echo "<h1 class=\"text-light\">Round ID: " . $row['id'] . "</h1>";
+            echo "<h4 class=\"text-light\">Round ID: " . $row['id'] . "</h4>";
             echo "<h2 class=\"text-light\">Gamemode: " . gamemodeToIcon($row['game_mode']) . "</h2>";
             echo "<h3 class=\"text-light\">End State: " . $data[2] . "</h3>";
-            echo "<p class=\"text-light\">Information: " . $data[3] . "</p>";
+            echo "<p class=\"text-light\">Started At: " . $row['start_datetime'] . " | Ended At: " . $row['end_datetime'] . "</p>";
+            echo "<p class=\"text-light\">State: " . $data[3] . "</p>";
             echo "</div>";
             echo "<div class=\"col-sm\">";
             echo "<h1 class=\"text-light\">Round Deaths</h1>";
@@ -64,6 +65,19 @@
                     }
                 }
                 echo insertWebmapBase();
+                echo "<br><h5 class=\"text-light\">Death Links:</h5><p class=\"text-light\">";
+                $total = count($deathresult);
+                $count = 0;
+                foreach($deathresult as $deathrow) {
+                    $count = $count + 1;
+                    echo "<a href=\"./death.php?id=" . $deathrow['id'] . "\">" . $deathrow['name'] . "</a>";
+                    if($count < $total) {
+                        echo ", ";
+                    } else {
+                        echo ".";
+                    }
+                }
+                echo "</p>";
             }
             echo "</div>";
             echo "</div>";
